@@ -6,6 +6,10 @@ This repository contains the firmware scaffolding for an automated rice drying m
 
 This phase creates the initial PlatformIO project skeleton, module layout, configuration placeholders, and architecture documentation. No machine-control or hardware-driver logic is implemented yet.
 
+## Phase 2: hardware abstraction
+
+This phase establishes the hardware abstraction layer. Sensor, I/O, communication, HMI, and calibration-storage interfaces are defined independently from the final GPIO assignments and communication topology so the machine logic can remain portable and testable.
+
 ## Project goals
 
 - ESP32-S3 based HMI and controller architecture
