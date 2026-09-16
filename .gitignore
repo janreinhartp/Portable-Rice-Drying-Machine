@@ -1,0 +1,7 @@
+.pio
+.vscode/
+.pioenvs
+.piolibdeps
+*.code-workspace
+*.log
+.DS_Store
