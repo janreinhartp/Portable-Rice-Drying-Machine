@@ -11,6 +11,10 @@ public:
   void begin();
   void poll();
   bool connected() const;
+  void setConnected(bool connected);
+
+private:
+  bool connected_;
 };
 
 } // namespace communication

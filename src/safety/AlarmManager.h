@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <string>
+#include <vector>
 
 namespace rice_drying {
 namespace safety {
@@ -29,6 +30,10 @@ public:
   void raise(uint32_t id, AlarmSeverity severity, const std::string& description);
   void clear(uint32_t id);
   bool hasActiveAlarms() const;
+  const std::vector<Alarm>& alarms() const;
+
+private:
+  std::vector<Alarm> alarms_;
 };
 
 } // namespace safety

@@ -13,6 +13,10 @@ public:
   void reset();
   bool loadFromStorage();
   bool saveToStorage() const;
+  bool addPoint(const CalibrationPoint& point);
+  bool calculate();
+  float estimate(float rawValue) const;
+  bool valid() const;
 
 private:
   MoistureCalibration calibration_;

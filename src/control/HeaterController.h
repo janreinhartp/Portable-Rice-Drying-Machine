@@ -12,6 +12,7 @@ public:
   void disable();
   void setPowerPercent(float percent);
   bool isEnabled() const;
+  float powerPercent() const;
 
 private:
   bool enabled_;

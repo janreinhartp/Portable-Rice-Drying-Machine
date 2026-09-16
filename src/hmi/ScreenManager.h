@@ -23,6 +23,10 @@ public:
 
   void show(ScreenId screenId);
   ScreenId currentScreen() const;
+  bool isValid(ScreenId screenId) const;
+
+private:
+  ScreenId currentScreen_;
 };
 
 } // namespace hmi

@@ -17,10 +17,17 @@ void HeaterController::disable() {
 
 void HeaterController::setPowerPercent(float percent) {
   powerPercent_ = percent;
+  if (percent <= 0.0f) {
+    enabled_ = false;
+  }
 }
 
 bool HeaterController::isEnabled() const {
   return enabled_;
+}
+
+float HeaterController::powerPercent() const {
+  return powerPercent_;
 }
 
 } // namespace control

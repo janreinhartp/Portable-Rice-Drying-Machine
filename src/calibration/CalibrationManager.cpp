@@ -18,5 +18,22 @@ bool CalibrationManager::saveToStorage() const {
   return true;
 }
 
+bool CalibrationManager::addPoint(const CalibrationPoint& point) {
+  calibration_.addPoint(point);
+  return true;
+}
+
+bool CalibrationManager::calculate() {
+  return calibration_.calculate();
+}
+
+float CalibrationManager::estimate(float rawValue) const {
+  return calibration_.estimate(rawValue);
+}
+
+bool CalibrationManager::valid() const {
+  return calibration_.valid();
+}
+
 } // namespace calibration
 } // namespace rice_drying

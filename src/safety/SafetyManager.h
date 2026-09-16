@@ -11,6 +11,10 @@ public:
   void initialize();
   void evaluate();
   bool isFaulted() const;
+  void setFaulted(bool faulted);
+
+private:
+  bool faulted_;
 };
 
 } // namespace safety

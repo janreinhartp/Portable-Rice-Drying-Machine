@@ -3,6 +3,12 @@
 namespace rice_drying {
 namespace communication {
 
+enum class LinkState {
+  Offline,
+  Ready,
+  Fault
+};
+
 class CommunicationManager {
 public:
   CommunicationManager();
@@ -11,6 +17,11 @@ public:
   void begin();
   void update();
   bool healthy() const;
+  LinkState state() const;
+
+private:
+  LinkState state_;
+  bool healthy_;
 };
 
 } // namespace communication

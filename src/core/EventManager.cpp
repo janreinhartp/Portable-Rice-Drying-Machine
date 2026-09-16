@@ -1,20 +1,32 @@
 #include "EventManager.h"
 
+#include <Arduino.h>
+
 namespace rice_drying {
 namespace core {
 
-EventManager::EventManager() : pending_(false) {}
+EventManager::EventManager() = default;
 
 EventManager::~EventManager() = default;
 
 void EventManager::publish(EventType type, const char* description) {
-  (void)type;
-  (void)description;
-  pending_ = true;
+  Event event{};
+  event.type = type;
+  event.timestampMs = millis();
+  event.description = description ? description : "";
+  queue_.push_back(event);
 }
 
 bool EventManager::hasPendingEvents() const {
-  return pending_;
+  return !queue_.empty();
+}
+
+const std::vector<Event>& EventManager::queue() const {
+  return queue_;
+}
+
+void EventManager::clear() {
+  queue_.clear();
 }
 
 } // namespace core

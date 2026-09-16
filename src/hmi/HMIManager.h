@@ -11,6 +11,10 @@ public:
   void initialize();
   void refresh();
   bool ready() const;
+  void setReady(bool ready);
+
+private:
+  bool ready_;
 };
 
 } // namespace hmi

@@ -13,6 +13,7 @@ public:
   MachineState currentState() const;
   void transitionTo(MachineState nextState);
   bool isSafeState() const;
+  bool isRunning() const;
 
 private:
   MachineState state_;

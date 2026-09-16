@@ -1,6 +1,8 @@
 #pragma once
 
 #include <cstdint>
+#include <string>
+#include <vector>
 
 namespace rice_drying {
 namespace core {
@@ -19,7 +21,7 @@ enum class EventType {
 struct Event {
   EventType type;
   uint32_t timestampMs;
-  const char* description;
+  std::string description;
 };
 
 class EventManager {
@@ -29,9 +31,11 @@ public:
 
   void publish(EventType type, const char* description);
   bool hasPendingEvents() const;
+  const std::vector<Event>& queue() const;
+  void clear();
 
 private:
-  bool pending_;
+  std::vector<Event> queue_;
 };
 
 } // namespace core
